@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+
+<body>
+  
+    <%- include('partials/header.ejs') %>
+
+    <main class="flex flex-col justify-center max-w-[1280px] mx-auto mt-7">
+        <h2 class="text-4xl text-red-500 font-bold text-center">Here are our Registered Homes</h2>
+        <div class="text-center p-6  shadow-md mx-auto max-w-[300px]">
+            <a class="font-bold text-4xl" href="/host/add-home">Add Home</a>
+        </div>
+        <ul class="mt-8 space-y-4">
+            <% registeredHomes.forEach(home => { %>
+            <li class="bg-white shadow rounded-lg p-4 text-xl font-semibold text-gray-800 hover:bg-green-50 transition">
+                <%= home.houseName %>
+            </li>
+            <% }) %>
+        </ul>
+    </main>
+
+
+</body>
+
+</html>
